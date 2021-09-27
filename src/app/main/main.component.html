@@ -1,0 +1,30 @@
+<div class="form">
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <div class="title">Cadastro</div>
+        <div class="subtitle">Preencha os dados</div>
+        <div class="input-container ic1">
+            <input id="name" formControlName="name" class="input" type="text" placeholder="Nome" />
+            <div class="cut"></div>
+
+        </div>
+        <div class="input-container ic2">
+            <input id="email" formControlName="email" class="input" type="email" placeholder="E-mail" />
+            <div class="cut cut-short"></div>
+
+        </div>
+        <div class="input-container ic2">
+            <input id="phone" formControlName="phone" class="input" type="number" placeholder="Telefone" />
+            <div class="cut"></div>
+
+        </div>
+        <button type="submit" class="submit">Enviar</button>
+    </form>
+</div>
+
+<div class="users">
+    <div *ngFor="let user of users | async" class="user">
+        <p>Nome: {{user.name}}</p>
+        <p>E-mail: {{user.email}}</p>
+        <p>Telefone: {{user.phone}}</p>
+    </div>
+</div>
